@@ -44,3 +44,45 @@ QLineEdit, QTimeEdit, QTextEdit {
 QLineEdit:focus, QTimeEdit:focus, QTextEdit:focus {
     border: 1px solid #d3d7cf;
 }
+
+/* Additional Styles */
+QListView::item:selected {
+    background-color: #5294e2;
+    color: #d3d7cf;
+}
+
+QPushButton#deleteButton {
+    background-color: #e74c3c;
+    border: 1px solid #c0392b;
+}
+
+QPushButton#deleteButton:hover {
+    background-color: #c0392b;
+}
+
+QPushButton#editButton {
+    background-color: #3498db;
+    border: 1px solid #2980b9;
+}
+
+QPushButton#editButton:hover {
+    background-color: #2980b9;
+}
+
+QPushButton#completeButton {
+    background-color: #2ecc71;
+    border: 1px solid #27ae60;
+}
+
+QPushButton#completeButton:hover {
+    background-color: #27ae60;
+}
+
+QPushButton#themeButton {
+    background-color: #f39c12;
+    border: 1px solid #e67e22;
+}
+
+QPushButton#themeButton:hover {
+    background-color: #e67e22;
+}

@@ -1,38 +1,23 @@
-from PyQt5.QtWidgets import QDialog, QVBoxLayout, QLineEdit, QTimeEdit, QColorDialog, QTextEdit, QPushButton
+from PyQt5 import uic
+from PyQt5.QtWidgets import QDialog, QColorDialog
 from model.block import Block
+import os
 
 class BlockDialog(QDialog):
-    def __init__(self, parent=None):
+    def __init__(self, parent=None, block=None):
         super().__init__(parent)
-        self.init_ui()
+        uic.loadUi(os.path.join(os.path.dirname(__file__), 'ui_block_dialog.ui'), self)
+        self.color = None
 
-    def init_ui(self):
-        self.setWindowTitle('Add/Edit Block')
-        layout = QVBoxLayout()
+        if block:
+            self.titleEdit.setText(block.title)
+            self.startTimeEdit.setTime(block.start_time)
+            self.endTimeEdit.setTime(block.end_time)
+            self.descriptionEdit.setPlainText(block.description)
+            self.color = block.color
 
-        self.title_edit = QLineEdit()
-        self.title_edit.setPlaceholderText('Title')
-        layout.addWidget(self.title_edit)
-
-        self.start_time_edit = QTimeEdit()
-        layout.addWidget(self.start_time_edit)
-
-        self.end_time_edit = QTimeEdit()
-        layout.addWidget(self.end_time_edit)
-
-        self.color_button = QPushButton('Select Color')
-        self.color_button.clicked.connect(self.select_color)
-        layout.addWidget(self.color_button)
-
-        self.description_edit = QTextEdit()
-        self.description_edit.setPlaceholderText('Description')
-        layout.addWidget(self.description_edit)
-
-        save_button = QPushButton('Save')
-        save_button.clicked.connect(self.save_block)
-        layout.addWidget(save_button)
-
-        self.setLayout(layout)
+        self.colorButton.clicked.connect(self.select_color)
+        self.saveButton.clicked.connect(self.save_block)
 
     def select_color(self):
         color = QColorDialog.getColor()
@@ -41,11 +26,11 @@ class BlockDialog(QDialog):
 
     def save_block(self):
         self.block = Block(
-            self.title_edit.text(),
-            self.start_time_edit.time().toString('HH:mm'),
-            self.end_time_edit.time().toString('HH:mm'),
+            self.titleEdit.text(),
+            self.startTimeEdit.time().toString('HH:mm'),
+            self.endTimeEdit.time().toString('HH:mm'),
             self.color,
-            self.description_edit.toPlainText()
+            self.descriptionEdit.toPlainText()
         )
         self.accept()
 

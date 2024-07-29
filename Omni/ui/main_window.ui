@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Timetune</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QCalendarWidget" name="calendarWidget"/>
+    </item>
+    <item>
+     <widget class="QListView" name="blockListView"/>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="searchBar">
+      <property name="placeholderText">
+       <string>Search...</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="buttonWidget" native="true">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="addBlockButton">
+         <property name="text">
+          <string>Add Block</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="editBlockButton">
+         <property name="text">
+          <string>Edit Block</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="deleteBlockButton">
+         <property name="text">
+          <string>Delete Block</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="completeBlockButton">
+         <property name="text">
+          <string>Complete Block</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="themeButton">
+         <property name="text">
+          <string>Switch Theme</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
