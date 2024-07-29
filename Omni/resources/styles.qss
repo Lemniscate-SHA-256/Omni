@@ -1,0 +1,46 @@
+/* Dark theme with blue accents */
+
+QWidget {
+    background-color: #2b2b2b;
+    color: #d3d7cf;
+}
+
+QCalendarWidget QWidget {
+    alternate-background-color: #3e3e3e;
+}
+
+QCalendarWidget QAbstractItemView:enabled {
+    background-color: #3e3e3e;
+    selection-background-color: #5294e2;
+    selection-color: #d3d7cf;
+}
+
+QPushButton {
+    background-color: #3e3e3e;
+    color: #d3d7cf;
+    border: 1px solid #5294e2;
+    padding: 5px;
+}
+
+QPushButton:hover {
+    background-color: #5294e2;
+    border: 1px solid #3e3e3e;
+}
+
+QListView {
+    background-color: #3e3e3e;
+    border: 1px solid #5294e2;
+    color: #d3d7cf;
+    selection-background-color: #5294e2;
+    selection-color: #d3d7cf;
+}
+
+QLineEdit, QTimeEdit, QTextEdit {
+    background-color: #3e3e3e;
+    color: #d3d7cf;
+    border: 1px solid #5294e2;
+}
+
+QLineEdit:focus, QTimeEdit:focus, QTextEdit:focus {
+    border: 1px solid #d3d7cf;
+}
